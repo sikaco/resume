@@ -35,19 +35,20 @@ var storyboard = {
             animation._ballGravityMove,
             bgm.play,
 
-            animation.skillTitle,
-            animation.skills_basic,
-
-            //animation.page2,
-            //animation.page2_browser,
-            //animation.page2_headphone,
-            //animation.page2_about,
-            //animation.backgroundChange,
             //animation.skillTitle,
             //animation.skills_basic,
+
+            animation.page2,
+            animation.page2_browser,
+            animation.page2_headphone,
+            animation.page2_about,
+            animation.backgroundChange,
+            animation.skillTitle,
+            animation.skills_basic,
             animation.starClassAni,
-            animation.skills_projects,
-            animation.skills_other
+            //animation.skills_projects,
+            //animation.skills_other
+            animation.toBeContinue
         ];
         var i = 0;
         this.storyElem.bind('nextStory', function () {
@@ -301,7 +302,16 @@ var animation = {
         }, timeout);
     },
     'starClassAni': function () {
-
+        //TODO
+        setTimeout(function () {
+            storyboard.next();
+        }, 5000);
+    },
+    'toBeContinue': function () {
+        $('#background').css('top', '100%');
+        ctx.globalCompositeOperation = "source-over";
+        ctx.globalCompositeOperation = "lighter";
+        theBall.whiteFlameMode = false;
     }
 };
 
